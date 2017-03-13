@@ -4,10 +4,12 @@ var fs = require('fs');
 var mongo = require('mongodb');
 
 app.get('/projects', function(req, res){
-   fs.readFile(__dirname + "/projects.json", "utf8", function(err, data){
-       console.log(data);
-       res.end(data);
-   });
+    if(projects.length < 2){
+        res.status(404);
+    } else {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.json(projects);
+    }
 });
 
 
@@ -27,7 +29,6 @@ mongoClient.connect("mongodb://localhost:27017/Portfolio", function(err, db){
                             console.log("No Items in Collection");
                         } else {
                             console.log("One or more items found");
-                            console.log(items);
                             projects = items;
                         }
                     }
