@@ -1,19 +1,20 @@
+var projectData = [];
+var curIndex = 0;
 app.controller('ProjectsController', ['$scope', 'projects', function($scope, projects) {
     $scope.$on('$viewContentLoaded', function(){
         //Get the projects info from Node.js server
         projects
             .success(function(data){
-                projects = data;
+                projectData = data;
                 loadProject();
             })
             .error(function(err){
                 alert('Fail to Load from API. Website will load default project status');
-                console.log(err);
-                var result = [
+                projectData = [
                     {
                         "_id": "58c88fc67deeb9153f842f43",
                         "name": "OneClickUpload",
-                        "page": "oneclickupload.htm",
+                        "page": "#/oneclickupload",
                         "technology": {
                             "icons": [
                                 "Android",
@@ -45,7 +46,7 @@ app.controller('ProjectsController', ['$scope', 'projects', function($scope, pro
                     {
                         "_id": "58c88fc67deeb9153f842f44",
                         "name": "PortfolioV1",
-                        "page": "portfolio.htm",
+                        "page": "#/portfolio",
                         "technology": {
                             "icons": [
                                 "HTML5",
@@ -79,7 +80,7 @@ app.controller('ProjectsController', ['$scope', 'projects', function($scope, pro
                     {
                         "_id": "58c88fc67deeb9153f842f45",
                         "name": "Math Riceball",
-                        "page": "mathriceball.htm",
+                        "page": "#/mathriceball",
                         "technology": {
                             "icons": [
                                 "Unity",
@@ -105,7 +106,7 @@ app.controller('ProjectsController', ['$scope', 'projects', function($scope, pro
                     {
                         "_id": "58c88fc67deeb9153f842f46",
                         "name": "ParkNEat",
-                        "page": "parkneat.htm",
+                        "page": "#/parkneat",
                         "technology": {
                             "icons": [
                                 "Java"
@@ -130,7 +131,7 @@ app.controller('ProjectsController', ['$scope', 'projects', function($scope, pro
                     {
                         "_id": "58c88fc67deeb9153f842f47",
                         "name": "Shop Online!",
-                        "page": "shoponline.htm",
+                        "page": "#/shoponline",
                         "technology": {
                             "icons": [
                                 "PHP",
@@ -156,7 +157,6 @@ app.controller('ProjectsController', ['$scope', 'projects', function($scope, pro
                         "images": []
                     }
                 ];
-                projects = result;
                 loadProject();
             });
 
@@ -327,9 +327,9 @@ var PieChart = function(options){
  * @returns {*} : The Project Data
  */
 function getData(id){
-    for(i = 0; i < projects.length; i++){
-        if(id.includes(projects[i].name.replace(/[^a-z0-9+]+/gi, ''))){
-            return projects[i];
+    for(i = 0; i < projectData.length; i++){
+        if(id.includes(projectData[i].name.replace(/[^a-z0-9+]+/gi, ''))){
+            return projectData[i];
         }
     }
     return null;

@@ -12,7 +12,7 @@ app.controller('HomeController', ['$scope', 'projects', function($scope, project
                     {
                         "_id": "58c88fc67deeb9153f842f43",
                         "name": "OneClickUpload",
-                        "page": "oneclickupload.htm",
+                        "page": "#/oneclickupload",
                         "technology": {
                             "icons": [
                                 "Android",
@@ -44,7 +44,7 @@ app.controller('HomeController', ['$scope', 'projects', function($scope, project
                     {
                         "_id": "58c88fc67deeb9153f842f44",
                         "name": "PortfolioV1",
-                        "page": "portfolio.htm",
+                        "page": "#/portfolio",
                         "technology": {
                             "icons": [
                                 "HTML5",
@@ -78,7 +78,7 @@ app.controller('HomeController', ['$scope', 'projects', function($scope, project
                     {
                         "_id": "58c88fc67deeb9153f842f45",
                         "name": "Math Riceball",
-                        "page": "mathriceball.htm",
+                        "page": "#/mathriceball",
                         "technology": {
                             "icons": [
                                 "Unity",
@@ -104,7 +104,7 @@ app.controller('HomeController', ['$scope', 'projects', function($scope, project
                     {
                         "_id": "58c88fc67deeb9153f842f46",
                         "name": "ParkNEat",
-                        "page": "parkneat.htm",
+                        "page": "#/parkneat",
                         "technology": {
                             "icons": [
                                 "Java"
@@ -129,7 +129,7 @@ app.controller('HomeController', ['$scope', 'projects', function($scope, project
                     {
                         "_id": "58c88fc67deeb9153f842f47",
                         "name": "Shop Online!",
-                        "page": "shoponline.htm",
+                        "page": "#/shoponline",
                         "technology": {
                             "icons": [
                                 "PHP",
