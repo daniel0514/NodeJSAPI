@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
-var fs = require('fs');
 var mongo = require('mongodb');
+
+app.use(express.static(__dirname + "/public"));
 
 app.get('/projects', function(req, res){
     if(projects.length < 2){

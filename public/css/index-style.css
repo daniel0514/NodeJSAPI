@@ -1,0 +1,71 @@
+
+.cell {
+    display: inline-block;
+    height: 276px;
+    width: 276px;
+    float: left;
+    display: table;
+    border: 2px solid black;
+}
+
+
+.container {
+    max-width: 1200px;
+}
+
+.cell div {
+    display: block;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+    top: 60px;
+    margin: 10px;
+}
+
+img {
+    padding: 5px;
+}
+
+.circularImg{
+    position: absolute;
+    margin: 50px 0 0 50px;
+    border-radius: 50%;
+}
+
+body{
+    animation: colorLoop 5s infinite;
+    display:table-cell;
+    padding: 30px;
+    vertical-align: middle;
+}
+
+@keyframes colorLoop {
+    0%{background-color: #66ccff}
+    50%{background-color: #1ab2ff}
+    100%{background-color: #66ccff}
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+ul {
+    text-align: left;
+}
+
+li {
+    text-align: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+p {
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
