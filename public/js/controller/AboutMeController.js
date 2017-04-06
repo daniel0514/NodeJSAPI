@@ -5,7 +5,7 @@ app.controller('AboutMeController', function($scope) {
         for(var i  = 0; i < elements.length; i++){
             console.log(i);
             const element = elements[i];
-            addHoverEffect(element, null);
+            addHoverEffect(element);
             setStyle(element);
         }
     });

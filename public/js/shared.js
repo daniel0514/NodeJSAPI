@@ -47,27 +47,14 @@ function getRandomInt(min, max) {
  * @param div   : The element to apply the effects on
  * @param data  : The data containing the effect
  */
-function addHoverEffect(div, data){
-    if(data != null){
-        //Only project cells will come with data
-        $(div).hover(function(){
-            $(this).css("opacity", 1);
-            //when mouseover, change the div content to HoverInnerDiv
-            $(this).html(createProjectHoverInnerDiv(data));
-        }, function(){
-            $(this).css("opacity", 0.75);
-            //when mouseout, change the div content back to the original InnerDiv
-            $(this).html(createProjectInnerDiv(data));
-        });
-    } else {
-        //Else if data is null, the divs will be simple cells
-        //and we only need to apply mouseover opacity effect
-        $(div).hover(function(){
-            $(this).css("opacity", 1);
-        }, function(){
-            $(this).css("opacity", 0.75);
-        });
-    }
+function addHoverEffect(div){
+    //Else if data is null, the divs will be simple cells
+    //and we only need to apply mouseover opacity effect
+    $(div).hover(function(){
+        $(this).css("opacity", 1);
+    }, function(){
+        $(this).css("opacity", 0.75);
+    });
 }
 
 /**

@@ -5,6 +5,25 @@
     <a href="#/aboutme"><div class="cell"><div><p>My name is Daniel Hsiao. I'm currently a fourth year Computer Science student at the University of British Coumbia. My interest is mainly in Web Development and Application Development, especially Android Development.</p></div></div></a>
     <a href="#/aboutme"><div class="cell"><div><ul>Skill set:</ul><li>Java</li><li>JavaScript</li><li>HTML & CSS</li><li>SQL and Databases</li></div></div></a>
     <div class="cell" id="beforeProjects" ><p></p></div>
+    <a ng-repeat="project in projectList" ng-href="{{project.page}}" ng-mouseover="hovered = true" ng-mouseleave="hovered = false" repeat-end="setEffect()">
+        <div class="cell project" ng-hide="hovered">
+            <div>
+                <p>{{project.name}}</p>
+                <img ng-repeat="image in project.technology.icons" ng-src="{{getTechPath(image)}}"/>
+            </div>
+        </div>
+        <div class="cell project" ng-show="hovered">
+            <div>
+                <p>{{project.descriptions.brief}}</p>
+                <ul>
+                    Technlogy:
+                    <li ng-repeat="tech in project.technology.hover">
+                        {{tech}}
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </a>
     <div class="cell" id="afterProjects">
         <div>
             <p>Links</p>
