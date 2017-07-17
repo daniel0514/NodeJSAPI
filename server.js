@@ -83,6 +83,8 @@ app.post('/newProject', function (req, res){
 
 //Use POST to update project information instead of using PUT
 app.post('/updateProject', function (req, res){
+    console.log("Upading Project: " + req.body.id);
+    console.log("Body: " + JSON.stringify(req.body));
     var item = {
         "name": req.body.name,
         "page": req.body.page,
